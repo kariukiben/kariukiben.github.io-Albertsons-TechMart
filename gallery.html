@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+</head>
+<body>
+<header>
+<h1>Gallery</h1>
+<nav class="navbar">
+<span class="logo">Albertsons TechMart Ltd</span>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="gallery.html">Products</a></li>
+<li><a href="contact.html">Contact</a></li><li><a href="directors.html">Directors</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="admin.html">Admin</a></li>
+
+</ul>
+</nav>
+<button class="dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+</header>
+
+<!--div class="filters">
+<button onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('laptop')">Laptops</button>
+<button onclick="filterProducts('phone')">Phones</button>
+<button onclick="filterProducts('accessory')">Accessories</button>
+</div>
+
+<section class="gallery">
+<div class="product" data-category="laptop"><img src="images/placeholder.png" alt="Laptop">
+     <h4>KES 80,000</h4></div>
+<div class="product" data-category="phone"><img src="images/placeholder.png" alt="Phone">
+    <h4>KES 45,000</h4></div>
+<div class="product" data-category="accessory"><img src="images/placeholder.png" alt="Watch">
+    <h4>KES 12,000</h4></div>
+<div class="product" data-category="accessory"><img src="images/placeholder.png" alt="Earbud">
+    <h4>KES 6,500</h4></div>
+</section-->
+<!-- PRODUCTS -->
+<section class="products">
+
+  <div class="product">
+    <img src="images/accessories/earbuds.webp">
+    <h3>Wireless Headphones</h3>
+    <p>KES 3500</p>
+
+    <input type="number" min="1" value="1" id="qty-headphones">
+    <button onclick="addToCart('Wireless Headphones',3500,'qty-headphones')">
+      Add to Basket
+    </button>
+  </div>
+
+  <div class="product">
+    <img src="images/accessories/oraimo.jpg">
+    <h3>Smart Watch</h3>
+    <p>KES 5200</p>
+
+    <input type="number" min="1" value="1" id="qty-watch">
+    <button onclick="addToCart('Smart Watch',5200,'qty-watch')">
+      Add to Basket
+    </button>
+  </div>
+
+  <div class="product">
+    <img src="images/accessories/bluetooth.jpeg">
+    <h3>Bluetooth Speaker</h3>
+    <p>KES 2800</p>
+
+    <input type="number" min="1" value="1" id="qty-speaker">
+    <button onclick="addToCart('Bluetooth Speaker',2800,'qty-speaker')">
+      Add to Basket
+    </button>
+  </div>
+  <!-- SHOP-CONTROLS -->
+  <div class="shop-controls">
+
+  <input type="text" id="search" placeholder="Search products...">
+
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="audio">Audio</option>
+    <option value="wearables">Wearables</option>
+    <option value="accessories">Accessories</option>
+  </select>
+
+</div>
+
+</section>
+
+<!-- CART -->
+<section class="cart">
+  <h2>Shopping Basket</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items"></tbody>
+  </table>
+
+  <h3>Grand Total: KES <span id="grand-total">0</span></h3>
+
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+</section>
+
+<!-- RECEIPT -->
+<div id="receipt" class="receipt hidden"></div>
+
+<footer>&copy; 2026 Albertsons TechMart Ltd</footer>
+</body>
+</html>
